@@ -1,0 +1,12 @@
+[package]
+name = "rust-publicsuffix"
+version = "0.1.0"
+authors = ["Roustem Karimov <roustem@agilebits.com>"]
+edition = "2018"
+
+[dependencies.publicsuffix]
+version = "2.0.10"
+features = ["anycase"]
+
+[profile.release]
+lto = true

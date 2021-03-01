@@ -1,8 +1,11 @@
 [package]
-name = "rust-publicsuffix"
+name = "rust-psl"
 version = "0.1.0"
 authors = ["Roustem Karimov <roustem@agilebits.com>"]
 edition = "2018"
 
 [dependencies]
-publicsuffix = "1.5.2"
+psl = "2.0.8"
+
+[profile.release]
+lto = true
