@@ -30,7 +30,7 @@ func main() {
 			run("a.b.example.uk.com", "example.uk.com")
 		}
 		elapsed := time.Since(startedAt)
-		fmt.Printf("%6d iterations = %3.3fs\n", iterations, elapsed.Seconds())
+		fmt.Printf("%8d iterations = %3.3fs\n", iterations, elapsed.Seconds())
 	}
 
 	{
@@ -44,7 +44,7 @@ func main() {
 			run("a.b.example.uk.com", "example.uk.com")
 		}
 		elapsed := time.Since(startedAt)
-		fmt.Printf("%6d iterations = %3.3fs\n", iterations, elapsed.Seconds())
+		fmt.Printf("%8d iterations = %3.3fs\n", iterations, elapsed.Seconds())
 	}
 
 	{
@@ -58,6 +58,20 @@ func main() {
 			run("a.b.example.uk.com", "example.uk.com")
 		}
 		elapsed := time.Since(startedAt)
-		fmt.Printf("%6d iterations = %3.3fs\n", iterations, elapsed.Seconds())
+		fmt.Printf("%8d iterations = %3.3fs\n", iterations, elapsed.Seconds())
+	}
+
+	{
+		iterations := 10000000
+		startedAt := time.Now()
+		for i := 0; i < iterations; i++ {
+			run("abc.www.example.com", "example.com")
+			run("abc.golang.org", "golang.org")
+			run("www.食狮.中国", "食狮.中国")
+			run("www.xn--85x722f.xn--55qx5d.cn", "xn--85x722f.xn--55qx5d.cn")
+			run("a.b.example.uk.com", "example.uk.com")
+		}
+		elapsed := time.Since(startedAt)
+		fmt.Printf("%8d iterations = %3.3fs\n", iterations, elapsed.Seconds())
 	}
 }
